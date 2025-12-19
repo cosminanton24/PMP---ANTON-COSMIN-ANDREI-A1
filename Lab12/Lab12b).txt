@@ -1,0 +1,23 @@
+b) Care este in medie granita de decizie? Sunt datele bine separate?
+
+In modelul de regresie logistica, probabilitatea de promovare este:
+p = sigmoid(alpha + beta1 * x1 + beta2 * x2),
+unde x1 = Ore_Studiu_z si x2 = Ore_Somn_z (predictori standardizati).
+
+Granita de decizie este definita de p = 0.5, adica de conditia:
+alpha + beta1 * Ore_Studiu_z + beta2 * Ore_Somn_z = 0.
+
+„In medie” folosim mediile posterioare (posterior mean) ale parametrilor:
+E[alpha], E[beta1], E[beta2].
+Deci granita de decizie medie este:
+E[alpha] + E[beta1] * Ore_Studiu_z + E[beta2] * Ore_Somn_z = 0,
+echivalent:
+Ore_Somn_z = -(E[alpha] + E[beta1] * Ore_Studiu_z) / E[beta2] (daca E[beta2] != 0).
+
+Datele sunt bine separate daca:
+
+coeficientii au HDI 95% departe de 0 (nu includ 0), deci efect clar;
+
+predictiile sunt concentrate aproape de 0 sau 1 (putine valori in jur de 0.5);
+
+acuratetea/performanta pe date (sau posterior predictive) este ridicata si exista putine cazuri ambigue langa granita.
