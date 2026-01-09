@@ -1,0 +1,12 @@
+c) Ce influenteaza mai mult promovabilitatea: orele de studiu sau de somn?
+
+Pentru ca am standardizat predictori, comparatia intre influente se face direct pe coeficientii beta:
+
+daca |E[beta2]| > |E[beta1]|, atunci Ore_Somn are influenta mai mare decat Ore_Studiu (in sensul ca o crestere cu 1 deviatie standard produce o schimbare mai mare in log-odds).
+
+daca |E[beta1]| > |E[beta2]|, atunci Ore_Studiu influenteaza mai mult.
+
+In plus, ma uit la HDI 95%:
+
+variabila cu HDI mai departat de 0 (si semn stabil) are efect mai sigur si mai puternic.
+Prin urmare, variabila cu coeficientul standardizat (in valoare absoluta) mai mare si cu HDI care nu include 0 este cea care influenteaza cel mai mult promovabilitatea in acest model.
